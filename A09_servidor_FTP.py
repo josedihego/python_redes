@@ -1,3 +1,10 @@
+# PROBLEMAS
+# Senhas e arquivos são enviados sem qualquer proteção
+# ataques: man-in-the-middle
+# alternativas: SFTP, SSH (Secure Shell), HTTPS e web servers
+# FTP usa conexões longas se comparadas ao HTTP, curtas e pontuais
+# Unix/Linux: VSFTPD (Very Secure File Transfer Protocol Daemon)
+# Windows/Mac/Linux: FileZilla
 
 from pyftpdlib.authorizers import DummyAuthorizer
 # - DummyAuthorizer gerencia autenticações e permissões do servidor FTP
