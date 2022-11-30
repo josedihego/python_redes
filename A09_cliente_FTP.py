@@ -6,7 +6,7 @@ from ftplib import FTP
 
 ftp = FTP('')
 # criação de um objeto FTP
-ftp.connect('10.25.120.246', 1026)
+ftp.connect('10.25.120.94', 1026)
 # conexão ao servidor FTP
 ftp.login('patativa', 'p34f2')
 # login no servidor com usuário e senha

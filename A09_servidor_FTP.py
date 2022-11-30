@@ -5,11 +5,11 @@
 # FTP usa conexões longas se comparadas ao HTTP, curtas e pontuais
 # Unix/Linux: VSFTPD (Very Secure File Transfer Protocol Daemon)
 # Windows/Mac/Linux: FileZilla
+# xclip -selection clipboard -target image/png -out > out.png
 
 from pyftpdlib.authorizers import DummyAuthorizer
-# - DummyAuthorizer gerencia autenticações e permissões do servidor FTP
+# - DummyAuthorizer gerencia autenticações/permissões do servidor
 # - senhas salvas sem qualquer proteção em arquivos de texto
-#  - serve como base para criação de gerenciadores de autorização mais complexos
 # - usado dentro de um ...
 from pyftpdlib.handlers import FTPHandler
 # - FTPHandler para verificar usuário e senha,
@@ -21,13 +21,20 @@ from pyftpdlib.servers import FTPServer
 
 autoridade = DummyAuthorizer()
 autoridade.add_user(
-    'admin', 'admin', '/home/josedihego/servidorFTP/', perm='elradfmw')
-autoridade.add_user('patativa', 'p34f2', '/home/josedihego/servidorFTP/', perm='elradfmw')
+    'admin', 'admin',
+    '/home/josedihego/servidorFTP/',
+    perm='elradfmw')
+autoridade.add_user(
+    'patativa', 'p34f2',
+    '/home/josedihego/servidorFTP/',
+    perm='elradfmw')
 
 gerenteFTP = FTPHandler
 gerenteFTP.authorizer = autoridade
 
-servidor = FTPServer(('10.25.120.246', 1026), gerenteFTP)
+servidor = FTPServer(
+    ('10.25.120.94', 1026),
+    gerenteFTP)
 servidor.serve_forever()
 
 # permissões

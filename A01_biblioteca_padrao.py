@@ -1,4 +1,5 @@
 # standard library ou bibliotecas padrão
+# xclip -selection clipboard -target image/png -out > out.png
 
 # módulo sys
 import sys

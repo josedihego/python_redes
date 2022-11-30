@@ -40,4 +40,4 @@ def enviar_email(origem, destino):
     sessao.quit()
 
 enviar_email('education.always.wins@gmail.com',
-             'ivo.jorge.portugal@gmail.com')
+             'olandrino@gmail.com')
